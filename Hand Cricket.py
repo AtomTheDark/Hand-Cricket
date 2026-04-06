@@ -3,6 +3,7 @@ import time
 
 
 def end(usr_cnt,sys_cnt):
+    print(f"{usr_cnt} - {sys_cnt}")
     if usr_cnt == sys_cnt:
         print("This match is a draw!!!!!!")
     elif usr_cnt > sys_cnt:
