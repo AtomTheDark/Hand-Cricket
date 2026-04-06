@@ -12,6 +12,7 @@ def end(usr_cnt,sys_cnt):
     print("Thank your for playing this game ^_^ ")
     exit()
 
+
 # noinspection DuplicatedCode
 def batting(number,sys_cnt=0):
     usr_cnt = 0
@@ -44,11 +45,16 @@ def batting(number,sys_cnt=0):
             usr_cnt = usr_cnt + usr_val
             print(f"Your points: {usr_cnt}")
 
+
 # noinspection DuplicatedCode
 def bowling(number,usr_cnt=0):
     sys_cnt = 0
     print("You are going to bowl!")
     while True:
+        if number == 1:
+            if usr_cnt<sys_cnt:
+                print("Since the system scored more than you; this match is coming to an end")
+                end(usr_cnt,sys_cnt)
         sys_val = random.randint(1,10)
         while True:
             try:
@@ -70,7 +76,7 @@ def bowling(number,usr_cnt=0):
             print("system's total points: ", sys_cnt)
             if number == 0 and usr_cnt == 0:
                 print("Now",end=" ")
-                bowling(1,sys_cnt)
+                batting(1,sys_cnt)
             if number == 1:
                 end(usr_cnt,sys_cnt)
         else:
@@ -78,6 +84,7 @@ def bowling(number,usr_cnt=0):
             print(f"System's points : {sys_cnt}")
 
 
+# If the user has won the odd or even the odd_even function will return 0 or 1 based on the selection will be done
 def bat_bowl(val):
     if val == 1:
         while True:
@@ -102,6 +109,7 @@ def bat_bowl(val):
             batting(0)
 
 
+# Works in addition to the odd_even to find the winner in odd or even
 def win_finder(num):
     sys_num = random.randint(1,10)
     summing = sys_num+num
@@ -114,6 +122,7 @@ def win_finder(num):
         return "odd"
 
 
+# this program checks whether the user has won the odd or even thing or not by calling win_finder
 def odd_even():
     while True:
         choice = input("Enter Odd or Even: ").lower().replace(" ","").strip()
