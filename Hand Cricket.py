@@ -1,5 +1,6 @@
 import random
 import time
+import winsound
 
 
 def end(usr_cnt,sys_cnt):
@@ -35,6 +36,7 @@ def batting(number,sys_cnt=0):
             time.sleep(0.25)
         print(f"{usr_val} - {sys_val}")
         if usr_val == sys_val:
+            winsound.Beep(2500,600)
             print("You lose!")
             print("Your total points: ", usr_cnt)
             if number == 0 and sys_cnt == 0:
@@ -73,6 +75,7 @@ def bowling(number,usr_cnt=0):
             time.sleep(0.25)
         print(f"{usr_val} - {sys_val}")
         if usr_val == sys_val:
+            winsound.Beep(2500,600)
             print("You win!")
             print("system's total points: ", sys_cnt)
             if number == 0 and usr_cnt == 0:
